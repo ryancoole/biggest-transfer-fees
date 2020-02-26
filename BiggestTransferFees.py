@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-
 import pandas as pd
 
 headers = {'User-Agent': 
@@ -11,7 +10,6 @@ pageTree = requests.get(page, headers=headers)
 pageSoup = BeautifulSoup(pageTree.content, 'html.parser')
 
 Players = pageSoup.find_all("a", {"class": "spielprofil_tooltip"})
-
 Values = pageSoup.find_all("td", {"class": "rechts hauptlink"})
 
 PlayersList = []
